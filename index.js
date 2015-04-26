@@ -1,26 +1,24 @@
 var builtins = require('builtins')
-var relative = require('relative-require-regex')()
 var stats = require('npm-stats')()
 
 module.exports = function(str, cb) {
-  if (relative.test(str))
-    return done(false, cb)
-  if (builtins.indexOf(str) >= 0)
-    return done(true, cb)
+  if (typeof cb !== 'function')
+    throw new TypeError('callback must be a function')
+  
+  if (builtins.indexOf(str) >= 0) {
+    return process.nextTick(function() {
+      cb(null, true)
+    })
+  }
 
   stats.module(str).info(function(err, data) {
     if (err) {
-      cb(false)
+      if (err.message === 'missing')
+        cb(null, false)
+      else
+        cb(err)
     } else {
-      cb(true)
-      // May fail with scoped packages
-      // cb(data.name === str)
+      cb(null, true)
     }
-  })
-}
-
-function done(b, cb) {
-  process.nextTick(function() {
-    cb(b)
   })
 }

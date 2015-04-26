@@ -11,13 +11,9 @@
   },
   "dependencies": {
     "builtins": "^1.0.1",
-    "npm-stats": "^1.1.0",
-    "relative-require-regex": "^1.0.0",
-    "validate-npm-package-name": "^2.0.1"
+    "npm-stats": "^1.1.0"
   },
   "devDependencies": {
-    "all-the-package-names": "^1.0.1",
-    "require-package-name": "^1.0.0",
     "tape": "^4.0.0"
   },
   "scripts": {
