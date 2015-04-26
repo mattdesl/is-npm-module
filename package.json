@@ -1,0 +1,48 @@
+{
+  "name": "is-npm-module",
+  "version": "1.0.0",
+  "description": "test whether a string is a public npm module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "builtins": "^1.0.1",
+    "npm-stats": "^1.1.0",
+    "relative-require-regex": "^1.0.0",
+    "validate-npm-package-name": "^2.0.1"
+  },
+  "devDependencies": {
+    "all-the-package-names": "^1.0.1",
+    "require-package-name": "^1.0.0",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "test",
+    "module",
+    "modules",
+    "public",
+    "npm",
+    "database",
+    "registry",
+    "require",
+    "requires",
+    "statement",
+    "on",
+    "is"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/is-npm-module.git"
+  },
+  "homepage": "https://github.com/mattdesl/is-npm-module",
+  "bugs": {
+    "url": "https://github.com/mattdesl/is-npm-module/issues"
+  }
+}
